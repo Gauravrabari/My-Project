@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        .form-label {
+            font-weight: 600;
+        }
+        .btn-primary {
+            width: 100%;
+            background: #2575fc;
+            border: none;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #6a11cb;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3 class="form-title">Student Management System</h3>
+        <form method= "POST">
+
+        {% csrf_token %}
+            <!-- Student's Name -->
+            <div class="mb-3">
+                <label for="studentName" class="form-label">Student's Name</label>
+                <input type="text" class="form-control" name="studentName" placeholder="Enter student's name" required>
+            </div>
+
+            <!-- Age -->
+            <div class="mb-3">
+                <label for="studentAge" class="form-label">Age</label>
+                <input type="number" class="form-control" name="studentAge" placeholder="Enter age" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                
+                    
+                        <input type="text" class="form-control" name="gender" placeholder="Enter gender" required>
+
+            
+            </div>
+
+            <!-- Enrollment Number -->
+            <div class="mb-3">
+                <label for="enrollmentNumber" class="form-label">Enrollment Number</label>
+                <input type="text" class="form-control" name="enrollmentNumber" placeholder="Enter enrollment number" required>
+            </div>
+
+            <!-- Contact -->
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contact</label>
+                <input type="tel" class="form-control" name="contact" placeholder="Enter contact number" required>
+            </div>
+
+            <!-- Course -->
+            <div class="mb-3">
+                <label for="course" class="form-label">Course</label>
+                <input type="text" class="form-control" name="course" placeholder="Enter student's course" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

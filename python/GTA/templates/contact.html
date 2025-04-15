@@ -1,0 +1,75 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+
+  <style>
+    .contact-form {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form button {
+      background: #2575fc;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We would love to hear from you! Reach out with any questions or feedback.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="contact-form">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <form method="post">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" Name="name" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  {% if success %}
+<div class="alert alert-success" role="alert">
+  Your message has been sent successfully!
+</div>
+{% endif %}
+
+{% endblock %}
+  
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Form with Update & Delete</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .table-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: linear-gradient(135deg, #ffddc1, #ff5370);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .btn-update {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-delete {
+      background-color: #d9534f;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    td.action-btns {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    table {
+      background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+      border-radius: 10px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+
+    th {
+      background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="table-container">
+    <h2 class="text-center mb-4">Student Table</h2>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Sr. No</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Age</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Doe</td>
+          <td>New York</td>
+          <td>20</td>
+          <td class="action-btns"><button class="btn btn-update btn-sm">Update</button></td>
+          <td class="action-btns"><button class="btn btn-delete btn-sm">Delete</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>Los Angeles</td>
+          <td>22</td>
+          <td class="action-btns"><button class="btn btn-update btn-sm">Update</button></td>
+          <td class="action-btns"><button class="btn btn-delete btn-sm">Delete</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Alice Brown</td>
+          <td>Chicago</td>
+          <td>21</td>
+          <td class="action-btns"><button class="btn btn-update btn-sm">Update</button></td>
+          <td class="action-btns"><button class="btn btn-delete btn-sm">Delete</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>David White</td>
+          <td>Houston</td>
+          <td>23</td>
+          <td class="action-btns"><button class="btn btn-update btn-sm">Update</button></td>
+          <td class="action-btns"><button class="btn btn-delete btn-sm">Delete</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Sophia Black</td>
+          <td>Phoenix</td>
+          <td>19</td>
+          <td class="action-btns"><button class="btn btn-update btn-sm">Update</button></td>
+          <td class="action-btns"><button class="btn btn-delete btn-sm">Delete</button></td>
+        </tr>
+        {% for crud in crud_input %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{crud.name}}</td>
+          <td>{{crud.city}}</td>
+          <td>{{crud.age}}</td>
+          <td>{{crud.photo}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

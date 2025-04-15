@@ -1,0 +1,48 @@
+
+{% extends 'master.html' %}
+
+{% block content %}
+
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Discover the wide range of services we offer to help you achieve your goals.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>What We Offer</h2>
+        <p class="text-muted">We provide solutions tailored to your needs.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card service-card p-4 text-center">
+            <i class="bi bi-laptop text-primary mb-3" style="font-size: 2rem;"></i>
+            <h5>Web Development</h5>
+            <p>Build stunning websites and applications with our expert team.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card p-4 text-center">
+            <i class="bi bi-bar-chart-line text-success mb-3" style="font-size: 2rem;"></i>
+            <h5>SEO Optimization</h5>
+            <p>Enhance your online presence and drive traffic to your site.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card p-4 text-center">
+            <i class="bi bi-people-fill text-danger mb-3" style="font-size: 2rem;"></i>
+            <h5>Consulting</h5>
+            <p>Get expert advice and strategies for your business challenges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   {% endblock %}
